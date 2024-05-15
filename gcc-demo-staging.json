@@ -1,0 +1,11 @@
+{
+  "extends": "../cypress.json",
+  "baseUrl": "https://staging-test.com",
+  "env": {
+    "account": {
+      "username": "will",
+      "password": "richards"
+    },
+    "ACCOUNT_HOLDER_NAME": "texas"
+  }
+} 

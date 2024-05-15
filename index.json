@@ -1,0 +1,855 @@
+{
+  "stats": {
+    "suites": 12,
+    "tests": 14,
+    "passes": 10,
+    "pending": 1,
+    "failures": 3,
+    "start": "2022-06-08T05:53:52.350Z",
+    "end": "2022-06-08T06:09:54.960Z",
+    "duration": 245754,
+    "testsRegistered": 14,
+    "passPercent": 71.42857142857143,
+    "pendingPercent": 7.142857142857143,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8a9acbb4-f693-4be8-a791-c9c96ebb2b06",
+      "title": "",
+      "fullFile": "cypress/integration/atp/TradeLimitBuy.js",
+      "file": "cypress/integration/atp/TradeLimitBuy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3948419f-1869-4efd-8240-b00deb576a1c",
+          "title": "Verify placing Limit Buy orders that cannot be executed immediately",
+          "fullFile": "cypress/integration/atp/TradeLimitBuy.js",
+          "file": "cypress/integration/atp/TradeLimitBuy.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify an active Limit Buy order for a random product",
+              "fullTitle": "Verify placing Limit Buy orders that cannot be executed immediately Verify an active Limit Buy order for a random product",
+              "timedOut": null,
+              "duration": 16024,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[{\"title\":\"Failed screenshot (Attempt 1)\",\"value\":\"screenshots/atp/TradeLimitBuy.js/Verify placing Limit Buy orders that cannot be executed immediately -- Verify an active Limit Buy order for a random product (failed).png\"}]",
+              "code": "var _this = this;\ncy.get(\"@products\").then(function (userProducts) {\n  var product = (0, _randomizeHelper.getRandomItemFromTheList)(userProducts.response.body);\n  var cryptoName = product.base_currency.code.toUpperCase();\n  var quantity = (0, _randomizeHelper.getRandomDoubleBetween)(_this.cryptoConfiguration[cryptoName][\"amount_minimum\"], _this.cryptoConfiguration[cryptoName][\"amount_maximum\"]);\n  placeOpenLimitBuyOrder(product, quantity);\n});",
+              "err": {},
+              "uuid": "7b6fb44d-c8dc-43d4-a2c8-0a45b7205222",
+              "parentUUID": "3948419f-1869-4efd-8240-b00deb576a1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7b6fb44d-c8dc-43d4-a2c8-0a45b7205222"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16024,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3021a494-db4b-416f-8291-38ff5787a913",
+      "title": "",
+      "fullFile": "cypress/integration/atp/TradeLimitSell.js",
+      "file": "cypress/integration/atp/TradeLimitSell.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "09556911-d440-4dec-98a9-3eb87653c815",
+          "title": "Verify placing Limit Sell orders that cannot be executed immediately",
+          "fullFile": "cypress/integration/atp/TradeLimitSell.js",
+          "file": "cypress/integration/atp/TradeLimitSell.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify an active Limit Sell order for a random product",
+              "fullTitle": "Verify placing Limit Sell orders that cannot be executed immediately Verify an active Limit Sell order for a random product",
+              "timedOut": null,
+              "duration": 25285,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var _this = this;\ncy.get(\"@products\").then(function (userProducts) {\n  var product = (0, _randomizeHelper.getRandomItemFromTheList)(userProducts.response.body);\n  var cryptoName = product.base_currency.code.toUpperCase();\n  var quantity = (0, _randomizeHelper.getRandomDoubleBetween)(_this.cryptoConfiguration[cryptoName][\"amount_minimum\"], _this.cryptoConfiguration[cryptoName][\"amount_maximum\"]);\n  placeOpenLimitSellOrder(product, quantity);\n});",
+              "err": {},
+              "uuid": "104a11e6-ba68-4213-8d74-f944a4b2fde1",
+              "parentUUID": "09556911-d440-4dec-98a9-3eb87653c815",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "104a11e6-ba68-4213-8d74-f944a4b2fde1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25285,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "4e8af47c-3df3-4bad-b242-c9160126e0e2",
+      "title": "",
+      "fullFile": "cypress/integration/atp/TradeMarketBuy.js",
+      "file": "cypress/integration/atp/TradeMarketBuy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "58b1999c-56d7-40be-992d-0efc1efee657",
+          "title": "Verify placing Market Buy order",
+          "fullFile": "cypress/integration/atp/TradeMarketBuy.js",
+          "file": "cypress/integration/atp/TradeMarketBuy.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify a Market Buy order for a random product",
+              "fullTitle": "Verify placing Market Buy order Verify a Market Buy order for a random product",
+              "timedOut": null,
+              "duration": 27212,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[{\"title\":\"Failed screenshot (Attempt 1)\",\"value\":\"screenshots/atp/TradeMarketBuy.js/Verify placing Market Buy order -- Verify a Market Buy order for a random product (failed).png\"},{\"title\":\"Failed screenshot (Attempt 2)\",\"value\":\"screenshots/atp/TradeMarketBuy.js/Verify placing Market Buy order -- Verify a Market Buy order for a random product (failed) (attempt 2).png\"}]",
+              "code": "var _this = this;\ncy.openTradePage();\ncy.get(\"@products\").then(function (userProducts) {\n  var product = (0, _randomizeHelper.getRandomItemFromTheList)(userProducts.response.body);\n  var currencyPair = (0, _tradeHelper.formatProductPair)(product.symbol);\n  var cryptoName = product.base_currency.code.toUpperCase();\n  var min = _this.cryptoConfiguration[cryptoName][\"amount_minimum\"];\n  var max = _this.cryptoConfiguration[cryptoName][\"amount_maximum\"];\n  buyCryptocurrency(product, currencyPair, min, max);\n});",
+              "err": {
+                "message": "AssertionError: Total: expected 89.846 to be close to 89.62 +/- 0.2",
+                "estack": "AssertionError: Total: expected 89.846 to be close to 89.62 +/- 0.2\n    at Context.eval (https://staging-demo-gcc.rain-test.com/__cypress/tests?p=cypress/support/index.js:2740:36)",
+                "diff": null
+              },
+              "uuid": "304556cf-d161-4c61-b9ac-e8127075b6d4",
+              "parentUUID": "58b1999c-56d7-40be-992d-0efc1efee657",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "304556cf-d161-4c61-b9ac-e8127075b6d4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27212,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "fffc48f0-5121-4cec-92ac-50a505567b69",
+      "title": "",
+      "fullFile": "cypress/integration/atp/TradeMarketSell.js",
+      "file": "cypress/integration/atp/TradeMarketSell.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "92f6c8fc-61e9-4555-9434-b8945ef2a24a",
+          "title": "Verify placing Market Sell order",
+          "fullFile": "cypress/integration/atp/TradeMarketSell.js",
+          "file": "cypress/integration/atp/TradeMarketSell.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify a Market Sell order for a random product",
+              "fullTitle": "Verify placing Market Sell order Verify a Market Sell order for a random product",
+              "timedOut": null,
+              "duration": 31129,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var _this = this;\ncy.openTradePage();\ncy.get(\"@products\").then(function (userProducts) {\n  var product = (0, _randomizeHelper.getRandomItemFromTheList)(userProducts.response.body);\n  var currencyPair = (0, _tradeHelper.formatProductPair)(product.symbol);\n  var cryptoName = product.base_currency.code.toUpperCase();\n  var quantity = (0, _randomizeHelper.getRandomDoubleBetween)(_this.cryptoConfiguration[cryptoName][\"amount_minimum\"], _this.cryptoConfiguration[cryptoName][\"amount_maximum\"]);\n  cy.wait(\"@balances\").then(function (balances) {\n    var cryptoBalance = balances.response.body.accounts.find(function (x) {\n      return x.currency === cryptoName.toLowerCase();\n    });\n    if (parseFloat(cryptoBalance.balance.amount) < quantity) _this.skip();\n  });\n  cy.selectCurrency(currencyPair);\n  cy.sellCrypto(quantity);\n  cy.verifyTotalSellPrice(quantity);\n});",
+              "err": {},
+              "uuid": "b24dd8b8-540a-48d5-9a7b-a21cc6163e81",
+              "parentUUID": "92f6c8fc-61e9-4555-9434-b8945ef2a24a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b24dd8b8-540a-48d5-9a7b-a21cc6163e81"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 31129,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b46bf909-9659-48dd-89cd-6640c3ea1d25",
+      "title": "",
+      "fullFile": "cypress/integration/market/MarketOverTime.js",
+      "file": "cypress/integration/market/MarketOverTime.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5bf4e2f0-b13f-4847-81b2-da4e505ca0ad",
+          "title": "Market over time on every range",
+          "fullFile": "cypress/integration/market/MarketOverTime.js",
+          "file": "cypress/integration/market/MarketOverTime.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Health check and Contract test on random crypto",
+              "fullTitle": "Market over time on every range Health check and Contract test on random crypto",
+              "timedOut": null,
+              "duration": 14253,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var randomUrl = (0, _randomizeHelper.getRandomItemFromTheList)(Object.values(_CryptoPO.cryptoUrl));\ncy.intercept(_ApiUrls[\"default\"].PricesHistory).as(\"pricesHistory\");\ncy.visitCoinPage(randomUrl);\ncy.wait(\"@pricesHistory\", {\n  timeout: _timeouts[\"default\"].SHORT\n});\nObject.entries(_Filter.rangeFilter).forEach(function (_ref) {\n  var _ref2 = (0, _slicedToArray2[\"default\"])(_ref, 2),\n      name = _ref2[0],\n      range = _ref2[1];\n  cy.get(range).click();\n  cy.wait(\"@pricesHistory\", {\n    timeout: _timeouts[\"default\"].LONG\n  }).then(function (_ref3) {\n    var response = _ref3.response;\n    expect(response.statusCode).eq(200);\n    expect(response.body.interval).to.be.a(\"string\");\n    expect(response.body.prices).to.be.a(\"array\");\n    expect(response.body.prices[0].spot_price).to.be.a(\"string\");\n    expect(response.body.prices[0].time).to.be.a(\"string\");\n    expect(response.body.product).to.be.a(\"object\");\n    expect(response.body.product.base_currency).to.be.a(\"string\");\n    expect(response.body.product.hyphenated_name).to.be.a(\"string\");\n    expect(response.body.product.name).to.be.a(\"string\");\n    expect(response.body.product.ref_currency).to.be.a(\"string\");\n  });\n});",
+              "err": {},
+              "uuid": "b520e858-d023-43b1-b9f3-03bfc1fb8a68",
+              "parentUUID": "5bf4e2f0-b13f-4847-81b2-da4e505ca0ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b520e858-d023-43b1-b9f3-03bfc1fb8a68"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14253,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9b213293-ae29-4f81-aeb3-72ee8ec104a9",
+      "title": "",
+      "fullFile": "cypress/integration/portfolio/Deposit.js",
+      "file": "cypress/integration/portfolio/Deposit.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5968539d-19f7-43d6-a297-702c621da57b",
+          "title": "Deposit flow",
+          "fullFile": "cypress/integration/portfolio/Deposit.js",
+          "file": "cypress/integration/portfolio/Deposit.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deposit to a random account",
+              "fullTitle": "Deposit flow Deposit to a random account",
+              "timedOut": null,
+              "duration": 17601,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var fiatCurrency = (0, _CoinPO.randomFiatName)();\nvar amount = (0, _randomizeHelper.getRandomIntBetween)(9, 16);\ncy.bankTransfer(fiatCurrency, amount);\ncy.latestTransactions(amount);",
+              "err": {},
+              "uuid": "1812a6d0-4b91-4d87-8c2d-14707be1ce26",
+              "parentUUID": "5968539d-19f7-43d6-a297-702c621da57b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1812a6d0-4b91-4d87-8c2d-14707be1ce26"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17601,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2a6d48ec-2154-4698-833c-60854aceb0cb",
+      "title": "",
+      "fullFile": "cypress/integration/portfolio/PortfolioOverTime.js",
+      "file": "cypress/integration/portfolio/PortfolioOverTime.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "58c1f14d-1bfc-4177-ab76-e5a96da81612",
+          "title": "Portfolio over time on every range",
+          "fullFile": "cypress/integration/portfolio/PortfolioOverTime.js",
+          "file": "cypress/integration/portfolio/PortfolioOverTime.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Health check and Contract test on all periods",
+              "fullTitle": "Portfolio over time on every range Health check and Contract test on all periods",
+              "timedOut": null,
+              "duration": 15671,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Object.entries(_Filter.rangeFilter).forEach(function (_ref) {\n  var _ref2 = (0, _slicedToArray2[\"default\"])(_ref, 2),\n      name = _ref2[0],\n      range = _ref2[1];\n  cy.get(range).click();\n  cy.wait(\"@valueOverTime\", {\n    timeout: _timeouts[\"default\"].LONG\n  }).then(function (_ref3) {\n    var response = _ref3.response;\n    expect(response.statusCode).eq(200);\n    expect(response.body[0].fiat_currency).to.be.a(\"string\");\n    expect(response.body[0].from).to.be.a(\"string\");\n    expect(response.body[0].interval).to.be.a(\"string\");\n    expect(response.body[0].portfolio_values).to.be.a(\"array\");\n    expect(response.body[0].portfolio_values).not.to.be.empty;\n  });\n});",
+              "err": {},
+              "uuid": "2cefae18-ffa6-47f8-afcf-7b4ec5bc5346",
+              "parentUUID": "58c1f14d-1bfc-4177-ab76-e5a96da81612",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2cefae18-ffa6-47f8-afcf-7b4ec5bc5346"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15671,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "87fe8cd2-62a1-48c8-bcbf-7827385626d5",
+      "title": "",
+      "fullFile": "cypress/integration/profile/ForgotPassword.js",
+      "file": "cypress/integration/profile/ForgotPassword.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "def1d0ee-6fe8-48f0-a6e0-2c056a1d8aa0",
+          "title": "Forgot password flow",
+          "fullFile": "cypress/integration/profile/ForgotPassword.js",
+          "file": "cypress/integration/profile/ForgotPassword.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registered email",
+              "fullTitle": "Forgot password flow Registered email",
+              "timedOut": null,
+              "duration": 9248,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_SignInPO[\"default\"].emailTextBox).type(this.user.username);\ncy.get(_SignInPO[\"default\"].signInButton).click();\ncy.wait(\"@reset\").its(\"response.statusCode\").should(\"eq\", 200);\ncy.url().should(\"contain\", _AppUrls[\"default\"].PasswordResetPage);",
+              "err": {},
+              "uuid": "632e94aa-101c-4450-9fc8-a24856672c35",
+              "parentUUID": "def1d0ee-6fe8-48f0-a6e0-2c056a1d8aa0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "632e94aa-101c-4450-9fc8-a24856672c35"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9248,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3b95cfec-aaf4-401d-9849-fd609eeffc53",
+      "title": "",
+      "fullFile": "cypress/integration/profile/InviteFriend.js",
+      "file": "cypress/integration/profile/InviteFriend.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71964713-26d1-412d-ab15-d7e5aa83474f",
+          "title": "Settings flow - Invite a friend",
+          "fullFile": "cypress/integration/profile/InviteFriend.js",
+          "file": "cypress/integration/profile/InviteFriend.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify an Invite a friend modal",
+              "fullTitle": "Settings flow - Invite a friend Verify an Invite a friend modal",
+              "timedOut": null,
+              "duration": 13546,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(_AppUrls[\"default\"].Portfolio);\n(0, _SettingsCC.openUserSettingsMenu)();\ncy.get(_SettingsPO.SettingsPO.inviteFriend).should(_assertions[\"default\"].visible).first().click();\ncy.get(_SettingsPO.SettingsPO.twitterIcon).should(_assertions[\"default\"].visible);\ncy.get(_SettingsPO.SettingsPO.emailIcon).should(_assertions[\"default\"].visible);\ncy.get(_SettingsPO.SettingsPO.referralModalHeader).verifyLocalizedContent(settingsStrings.REFERRAL_PROGRAM);\ncy.get(_SettingsPO.SettingsPO.referralModalBody).containLocalizedContent(settingsStrings.SHARE_LINKS);\ncy.get(_SettingsPO.SettingsPO.copyInfo).should(_assertions[\"default\"].visible).click();\ncy.get(_SettingsPO.SettingsPO.closeIcon).should(_assertions[\"default\"].visible).click();",
+              "err": {},
+              "uuid": "3c4ef0bb-67c3-43ea-b507-ce4576b8aae1",
+              "parentUUID": "71964713-26d1-412d-ab15-d7e5aa83474f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3c4ef0bb-67c3-43ea-b507-ce4576b8aae1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13546,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b1d91b3d-40b1-4ed0-951f-94d893dfd353",
+      "title": "",
+      "fullFile": "cypress/integration/profile/PaymentMethods.js",
+      "file": "cypress/integration/profile/PaymentMethods.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "58e5597f-0815-4c4b-9e80-23fdc608e6b5",
+          "title": "Payment method flow",
+          "fullFile": "cypress/integration/profile/PaymentMethods.js",
+          "file": "cypress/integration/profile/PaymentMethods.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "9e093568-18ed-46c0-a803-cad64885cc50",
+              "title": "Verify adding and removal of Credit/Debit card",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Add Credit/Debit Card with valid details",
+                  "fullTitle": "Payment method flow Verify adding and removal of Credit/Debit card Add Credit/Debit Card with valid details",
+                  "timedOut": null,
+                  "duration": 54501,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "[{\"title\":\"Failed screenshot (Attempt 1)\",\"value\":\"screenshots/profile/PaymentMethods.js/Payment method flow -- Verify adding and removal of CreditDebit card -- Add CreditDebit Card with valid details (failed).png\"},{\"title\":\"Failed screenshot (Attempt 2)\",\"value\":\"screenshots/profile/PaymentMethods.js/Payment method flow -- Verify adding and removal of CreditDebit card -- Add CreditDebit Card with valid details (failed) (attempt 2).png\"}]",
+                  "code": "(0, _SettingsCC.openAddPaymentMethodModal)();\n(0, _SettingsCC.openAddCardForm)();\ncy.intercept(\"POST\", _ApiUrls[\"default\"].Cards).as(\"Cards\");\ncy.AddCardAccounts(\"4166345356541616\", \"06/25\", \"900\", \"Nella Silva\");\ncy.wait(\"@Cards\", {\n  timeout: _timeouts[\"default\"].LONG\n}).its(\"response.statusCode\").should(_assertions[\"default\"].equal, 200);\ncy.contains(\"Credit - 1616\").should(_assertions[\"default\"].visible);",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 40000ms: `cy.wait()` timed out waiting `40000ms` for the 1st request to the route: `Cards`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 40000ms: `cy.wait()` timed out waiting `40000ms` for the 1st request to the route: `Cards`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:181711:18)\n    at Object.errByPath (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:181780:10)\n    at checkForXhr (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:167411:92)\n    at https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:167434:28\n    at tryCatcher (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:173835:65)\n    at https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:11083:18)\n    at https://staging-demo-gcc.rain-test.com/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (https://staging-demo-gcc.rain-test.com/__cypress/tests?p=cypress/integration/profile/PaymentMethods.js:54:10)",
+                    "diff": null
+                  },
+                  "uuid": "e44d6789-bdb5-4218-8505-2bffde0e00da",
+                  "parentUUID": "9e093568-18ed-46c0-a803-cad64885cc50",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Remove a Credit/Debit Card",
+                  "fullTitle": "Payment method flow Verify adding and removal of Credit/Debit card Remove a Credit/Debit Card",
+                  "timedOut": null,
+                  "duration": 10702,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "[{\"title\":\"Failed screenshot (Attempt 1)\",\"value\":\"screenshots/profile/PaymentMethods.js/Payment method flow -- Verify adding and removal of CreditDebit card -- Remove a CreditDebit Card (failed).png\"},{\"title\":\"Failed screenshot (Attempt 2)\",\"value\":\"screenshots/profile/PaymentMethods.js/Payment method flow -- Verify adding and removal of CreditDebit card -- Remove a CreditDebit Card (failed) (attempt 2).png\"}]",
+                  "code": "cy.intercept(\"DELETE\", _ApiUrls[\"default\"].DeleteCardRequest).as(\"DeleteCard\");\ncy.contains(\"Credit - 1616\").parent().next().click();\ncy.get(_SettingsPO.SettingsPO.addCardHeader).verifyLocalizedContent(settingsStrings.REMOVE_PAYMENT_METHOD);\ncy.get(_SettingsPO.SettingsPO.modalBody).find(\"button\").last().click();\ncy.wait(\"@DeleteCard\").its(\"response.statusCode\").should(_assertions[\"default\"].equal, 200);",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Credit - 1616' but never did.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Credit - 1616' but never did.\n    at Context.eval (https://staging-demo-gcc.rain-test.com/__cypress/tests?p=cypress/integration/profile/PaymentMethods.js:63:10)",
+                    "diff": null
+                  },
+                  "uuid": "0dfac4f4-735c-4c7d-897e-c701761eda9a",
+                  "parentUUID": "9e093568-18ed-46c0-a803-cad64885cc50",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "e44d6789-bdb5-4218-8505-2bffde0e00da",
+                "0dfac4f4-735c-4c7d-897e-c701761eda9a"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 65203,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0925389a-7368-44cc-8203-10d460502566",
+      "title": "",
+      "fullFile": "cypress/integration/profile/SignIn.js",
+      "file": "cypress/integration/profile/SignIn.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eabf5069-eb57-495f-a971-140b29822463",
+          "title": "Verify sign in functionality",
+          "fullFile": "cypress/integration/profile/SignIn.js",
+          "file": "cypress/integration/profile/SignIn.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Valid username and invalid password",
+              "fullTitle": "Verify sign in functionality Valid username and invalid password",
+              "timedOut": null,
+              "duration": 4725,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(_SignInPO[\"default\"].emailTextBox).type(this.user.username);\ncy.get(_SignInPO[\"default\"].passwordTextBox).type(cy.faker.internet.password(), {\n  force: true\n});\ncy.get(_SignInPO[\"default\"].signInButton).click();\ncy.wait(\"@login\").its(\"response.statusCode\").should(\"eq\", 401);\ncy.url().should(\"contain\", _AppUrls[\"default\"].SignInPage);",
+              "err": {},
+              "uuid": "a3c80e0d-a0b2-4ee0-aa8e-480043cf0b5c",
+              "parentUUID": "eabf5069-eb57-495f-a971-140b29822463",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a3c80e0d-a0b2-4ee0-aa8e-480043cf0b5c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4725,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e8dc1788-4338-4fba-8e70-4e70cb15fec9",
+      "title": "",
+      "fullFile": "cypress/integration/profile/SignUp.js",
+      "file": "cypress/integration/profile/SignUp.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "06e7cbfd-968d-4941-9439-885b28452207",
+          "title": "Verify Sign Up flow",
+          "fullFile": "cypress/integration/profile/SignUp.js",
+          "file": "cypress/integration/profile/SignUp.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "787f1644-35de-40aa-8cec-94dcede511ef",
+              "title": "Verify elements on the Sign Up page",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verify the Country dropdown",
+                  "fullTitle": "Verify Sign Up flow Verify elements on the Sign Up page Verify the Country dropdown",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "9c163148-b0a2-4c9a-826b-57000f57f207",
+                  "parentUUID": "787f1644-35de-40aa-8cec-94dcede511ef",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [
+                "9c163148-b0a2-4c9a-826b-57000f57f207"
+              ],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "1c63467d-dd30-450d-a683-7dc4ade2f3de",
+              "title": "Verify a new account creation",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Verify the Create account button is enabled only when all mandatory fields are filled in and password is strong",
+                  "fullTitle": "Verify Sign Up flow Verify a new account creation Verify the Create account button is enabled only when all mandatory fields are filled in and password is strong",
+                  "timedOut": null,
+                  "duration": 5857,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept(\"POST\", _ApiUrls[\"default\"].PasswordStrength).as(\"strength\");\ncy.get(_SignUpPO[\"default\"].createAccountButton).should(_assertions[\"default\"].disabled);\nif ((0, _envHelper.isTurkeyEnv)()) cy.get(_SignUpPO[\"default\"].termsCheckbox).check({\n  force: true\n});\ncy.get(_SignUpPO[\"default\"].firstNameInput).type(_faker[\"default\"].name.firstName(), {\n  force: true\n});\ncy.get(_SignUpPO[\"default\"].createAccountButton).should(_assertions[\"default\"].disabled);\ncy.get(_SignUpPO[\"default\"].lastNameInput).type(_faker[\"default\"].name.lastName(), {\n  force: true\n});\ncy.get(_SignUpPO[\"default\"].createAccountButton).should(_assertions[\"default\"].disabled);\ncy.get(_SignUpPO[\"default\"].emailInput).type(_faker[\"default\"].internet.email(), {\n  force: true\n});\ncy.get(_SignUpPO[\"default\"].createAccountButton).should(_assertions[\"default\"].disabled); // Verify only strong password is accepted\ncy.get(_SignUpPO[\"default\"].passwordInput).type(_faker[\"default\"].phone.phoneNumber(\"#####\"), {\n  force: true\n});\ncy.wait(\"@strength\");\ncy.get(_SignUpPO[\"default\"].createAccountButton).should(_assertions[\"default\"].disabled);\ncy.get(_SignUpPO[\"default\"].passwordInput).type(_faker[\"default\"].internet.password(10, false));\ncy.wait(\"@strength\");\ncy.get(_SignUpPO[\"default\"].createAccountButton).should(_assertions[\"default\"].enabled);",
+                  "err": {},
+                  "uuid": "2272c988-cba0-4ead-b50f-434edf089038",
+                  "parentUUID": "1c63467d-dd30-450d-a683-7dc4ade2f3de",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "2272c988-cba0-4ead-b50f-434edf089038"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5857,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/htmlreport/.jsons",
+        "charts": true,
+        "overwrite": false,
+        "showPending": false,
+        "showSkipped": true,
+        "saveJson": true,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

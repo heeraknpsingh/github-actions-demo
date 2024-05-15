@@ -1,0 +1,133 @@
+name: Sanity in GCC env
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      baseUrl:
+        type: choice
+        description: Kindly select environment
+        options:
+          - https://www-staging1/
+          - https://www-staging2/
+          - https://www-staging3/
+        required: true
+        default: "https://www-staging1/"
+      browser:
+        type: choice
+        description: Kindly select browser
+        options:
+          - chrome
+          - firefox
+        required: true
+        default: "chrome"
+      runMweb:
+        type: boolean
+        default: false
+        description: Run in mweb
+        required: true
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    name: Run sanity in GCC env
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: get total count from json
+        id: total
+        uses: notiz-dev/github-action-json-property@release
+        if: always()
+        with:
+          path: index.json
+          prop_path: "stats.tests"
+      - name: Total Object
+        if: always()
+        run: echo '${{steps.total.outputs.prop}}'
+        env:
+          TOTAL_TESTS: '${{steps.total.outputs.prop}}'
+      - name: get pass count from json
+        id: pass
+        uses: notiz-dev/github-action-json-property@release
+        if: always()
+        with:
+          path: index.json
+          prop_path: "stats.passes"
+      - name: Pass Object
+        if: always()
+        run: echo '${{steps.pass.outputs.prop}}'
+        env:
+          PASSED_TESTS: '${{steps.pass.outputs.prop}}'
+      - name: get skipped count from json
+        id: skipped
+        uses: notiz-dev/github-action-json-property@release
+        if: always()
+        with:
+          path: index.json
+          prop_path: "stats.skipped"
+        continue-on-error: true
+      - name: Skipped Object
+        if: always()
+        run: echo '${{steps.skipped.outputs.prop}}'
+        continue-on-error: true
+      - name: get pending count from json
+        id: pending
+        uses: notiz-dev/github-action-json-property@release
+        if: always()
+        with:
+          path: index.json
+          prop_path: "stats.pending"
+      - name: Pending Object
+        if: always()
+        run: echo '${{steps.pending.outputs.prop}}'
+        env:
+          PENDING_TESTS: '${{steps.pending.outputs.prop}}'
+      - name: get failed count from json
+        id: failed
+        uses: notiz-dev/github-action-json-property@release
+        if: always()
+        with:
+          path: index.json
+          prop_path: "stats.failures"
+      - name: Failed Object
+        if: always()
+        run: echo '${{steps.failed.outputs.prop}}'
+        env:
+          FAILED_TESTS: '${{steps.failed.outputs.prop}}'
+      - name: Get JSON Data
+        id: set_var
+        if: always()
+        run: |
+          JSON=$(cat ./index.json)
+          total_tests=`echo $(jq -r '.stats.tests' <<< "$JSON")`
+          passed_tests=`echo $(jq -r '.stats.passes' <<< "$JSON")`
+          pending_tests=`echo $(jq -r '.stats.pending' <<< "$JSON")`
+          failed_tests=`echo $(jq -r '.stats.failures' <<< "$JSON")`
+          skipped_tests=`echo $(jq -r '.stats.skipped' <<< "$JSON")`
+          echo $total_tests $passed_tests $pending_tests $failed_tests $skipped_tests
+          echo "::set-output name=Total::$total_tests"
+          echo "::set-output name=Passed::$passed_tests"
+          echo "::set-output name=Pending::$pending_tests"
+          echo "::set-output name=Failed::$failed_tests"
+          echo "::set-output name=Skipped::$skipped_tests"
+      - name: Print JSON Data
+        if: always()
+        run: |
+         echo -e "Total:${{steps.set_var.outputs.Total}}\nPassed:${{steps.set_var.outputs.Passed}}\nFailed:${{steps.set_var.outputs.Failed}}\nSkipped:${{steps.set_var.outputs.Skipped}}\nPending:${{steps.set_var.outputs.Pending}}"   
+      - name: Parse BaseURL value
+        id: getURL
+        if: always()
+        run: |
+          if [ "${{ github.event.inputs.baseUrl }}" == "" ]; then
+            JSON=$(cat ./gcc-demo-staging.json)
+            url=`echo $(jq -r '.baseUrl' <<< "$JSON")`
+            echo "::set-output name=URL::$url"
+          else
+            echo ::set-output name=URL::${{ github.event.inputs.baseUrl }}
+          fi
+      - name: Print BASEURL Data
+        if: always()
+        run: |
+         echo -e "URL:${{steps.getURL.outputs.URL}}"
